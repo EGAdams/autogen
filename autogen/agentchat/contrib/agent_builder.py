@@ -135,6 +135,7 @@ output after executing the code) and provide a corrected answer or code.
             max_tokens: max tokens for each agent.
             max_agents: max agents for each task.
         """
+        print ( "initializing AgentBuilder..." )
         self.host = host
         self.builder_model = builder_model
         self.agent_model = agent_model

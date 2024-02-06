@@ -1,5 +1,5 @@
 from collections import defaultdict
-import openai
+ 
 import json
 import time
 import logging
@@ -79,7 +79,7 @@ class GPTAssistantAgent(ConversableAgent):
                     name=name,
                     instructions=instructions,
                     tools=llm_config.get("tools", []),
-                    model=llm_config.get("model", "gpt-4-1106-preview"),
+                    model=llm_config.get("model", "gpt-3.5-turbo-1106"),
                     file_ids=llm_config.get("file_ids", []),
                 )
             else:
@@ -112,6 +112,7 @@ class GPTAssistantAgent(ConversableAgent):
 
             # Check if tools are specified in llm_config
             specified_tools = llm_config.get("tools", None)
+            print( "the tools available are", specified_tools )
 
             if specified_tools is None:
                 # Check if the current assistant has tools defined
@@ -219,6 +220,7 @@ class GPTAssistantAgent(ConversableAgent):
             Updated run object, status of the run, and response messages.
         """
         while True:
+            print( "entered while loop.  waiting for run status..." )
             run = self._wait_for_run(run.id, thread.id)
             if run.status == "completed":
                 response_messages = self._openai_client.beta.threads.messages.list(thread.id, order="asc")
@@ -240,6 +242,7 @@ class GPTAssistantAgent(ConversableAgent):
                                 )
                 return new_messages
             elif run.status == "requires_action":
+                print ( "*** run status is requires_action! ***")
                 actions = []
                 for tool_call in run.required_action.submit_tool_outputs.tool_calls:
                     function = tool_call.function
@@ -266,7 +269,7 @@ class GPTAssistantAgent(ConversableAgent):
                     "run_id": run.id,
                     "thread_id": thread.id,
                 }
-
+                print ( "submitting tool outputs: ", submit_tool_outputs )
                 run = self._openai_client.beta.threads.runs.submit_tool_outputs(**submit_tool_outputs)
             else:
                 run_info = json.dumps(run.dict(), indent=2)
@@ -285,6 +288,7 @@ class GPTAssistantAgent(ConversableAgent):
         """
         in_progress = True
         while in_progress:
+            print( "inside while loop.  waiting for run status..." )
             run = self._openai_client.beta.threads.runs.retrieve(run_id, thread_id=thread_id)
             in_progress = run.status in ("in_progress", "queued")
             if in_progress:

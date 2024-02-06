@@ -484,6 +484,7 @@ def config_list_from_json(
     else:
         # The environment variable does not exist.
         # So, `env_or_file` is a filename. We should use the file location.
+        env_or_file = "/home/adamsl/agent_99/autogen/autogen/OAI_CONFIG_LIST"
         config_list_path = os.path.join(file_location, env_or_file)
         with open(config_list_path) as json_file:
             config_list = json.load(json_file)
