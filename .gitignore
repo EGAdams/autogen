@@ -8,7 +8,7 @@ node_modules/
 *.log
 
 # Python virtualenv
-.venv
+.venv*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -124,7 +124,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
+new_environment_for_agent_99
 # Spyder project settings
 .spyderproject
 .spyproject
@@ -170,6 +170,18 @@ project_management
 project_management/
 test/rewritten_assistant_default.md
 
-# DB on disk for TeachableAgent
+# DB on disk for Teachability
 tmp/
 pyautogen/bin
+test/my_tmp/*
+
+# Storage for the AgentEval output
+test/test_files/agenteval-in-out/out/
+
+# Files created by tests
+*tmp_code_*
+test/agentchat/test_agent_scripts/*
+
+# test cache
+.cache_test
+autogen/new_environment_for_agent_99/bin/python3.10
