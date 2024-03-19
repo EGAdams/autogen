@@ -50,7 +50,7 @@ class QdrantRetrieveUserProxyAgent(RetrieveUserProxyAgent):
                 - collection_name (Optional, str): the name of the collection.
                     If key not provided, a default name `autogen-docs` will be used.
                 - model (Optional, str): the model to use for the retrieve chat.
-                    If key not provided, a default model `gpt-4` will be used.
+                    If key not provided, a default model `gpt-3.5-turbo` will be used.
                 - chunk_token_size (Optional, int): the chunk token size for the retrieve chat.
                     If key not provided, a default size `max_tokens * 0.4` will be used.
                 - context_max_tokens (Optional, int): the context max token size for the retrieve chat.

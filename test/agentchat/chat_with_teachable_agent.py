@@ -14,8 +14,8 @@ verbosity = 0  # 0 for basic info, 1 to add memory operations, 2 for analyzer me
 recall_threshold = 1.5  # Higher numbers allow more (but less relevant) memos to be recalled.
 use_cache = False  # If True, cached LLM calls will be skipped and responses pulled from cache. False exposes LLM non-determinism.
 
-# Specify the model to use. GPT-3.5 is less reliable than GPT-4 at learning from user input.
-filter_dict = {"model": ["gpt-4"]}
+# Specify the model to use. GPT-3.5 is less reliable than gpt-3.5-turbo at learning from user input.
+filter_dict = {"model": ["gpt-3.5-turbo"]}
 
 
 def create_teachable_agent(reset_db=False):

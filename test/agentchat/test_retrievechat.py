@@ -35,7 +35,7 @@ def test_retrievechat():
         OAI_CONFIG_LIST,
         file_location=KEY_LOC,
         filter_dict={
-            "model": ["gpt-4", "gpt4", "gpt-4-32k", "gpt-4-32k-0314"],
+            "model": ["gpt-3.5-turbo", "gpt4", "gpt-3.5-turbo-32k", "gpt-3.5-turbo-32k-0314"],
         },
     )
 

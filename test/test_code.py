@@ -23,12 +23,12 @@ here = os.path.abspath(os.path.dirname(__file__))
 #         import openai
 #     except ImportError:
 #         return
-#     # need gpt-4 for this task
+#     # need gpt-3.5-turbo for this task
 #     config_list = autogen.config_list_from_json(
 #         OAI_CONFIG_LIST,
 #         file_location=KEY_LOC,
 #         filter_dict={
-#             "model": ["gpt-4", "gpt4", "gpt-4-32k", "gpt-4-32k-0314"],
+#             "model": ["gpt-3.5-turbo", "gpt4", "gpt-3.5-turbo-32k", "gpt-3.5-turbo-32k-0314"],
 #         },
 #     )
 #     # config_list = autogen.config_list_from_json(

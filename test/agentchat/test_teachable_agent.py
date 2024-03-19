@@ -22,14 +22,14 @@ except ImportError:
 qa_verbosity = 0  # 0 for basic info, 1 to add memory operations, 2 for analyzer messages, 3 for memo lists.
 skill_verbosity = 3  # 0 for basic info, 1 to add memory operations, 2 for analyzer messages, 3 for memo lists.
 
-assert_on_error = False  # GPT-4 nearly always succeeds on these unit tests, but GPT-3.5 is a bit less reliable.
+assert_on_error = False  # gpt-3.5-turbo nearly always succeeds on these unit tests, but GPT-3.5 is a bit less reliable.
 recall_threshold = 1.5  # Higher numbers allow more (but less relevant) memos to be recalled.
 use_cache = False  # If True, cached LLM calls will be skipped and responses pulled from cache. False exposes LLM non-determinism.
 
 # Specify the model to use by uncommenting one of the following lines.
-# filter_dict={"model": ["gpt-4-0613"]}
 # filter_dict={"model": ["gpt-3.5-turbo-0613"]}
-# filter_dict={"model": ["gpt-4"]}
+# filter_dict={"model": ["gpt-3.5-turbo-0613"]}
+# filter_dict={"model": ["gpt-3.5-turbo"]}
 filter_dict = {"model": ["gpt-35-turbo-16k", "gpt-3.5-turbo-16k"]}
 
 

@@ -170,7 +170,7 @@ def config_list_gpt4_gpt35(
     aoai_api_base_file: Optional[str] = "base_aoai.txt",
     exclude: Optional[str] = None,
 ) -> List[Dict]:
-    """Get a list of configs for gpt-4 followed by gpt-3.5 api calls.
+    """Get a list of configs for gpt-3.5-turbo followed by gpt-3.5 api calls.
 
     Args:
         key_file_path (str, optional): The path to the key files.
@@ -188,7 +188,7 @@ def config_list_gpt4_gpt35(
         aoai_api_key_file,
         aoai_api_base_file,
         exclude,
-        model_list=["gpt-4", "gpt-3.5-turbo"],
+        model_list=["gpt-3.5-turbo-0613", "gpt-3.5-turbo-0613"],
     )
 
 
@@ -226,7 +226,7 @@ def config_list_from_json(
     ```python
     filter_dict = {
         "api_type": ["open_ai", None],  # None means a missing key is acceptable
-        "model": ["gpt-3.5-turbo", "gpt-4"],
+        "model": ["gpt-3.5-turbo", "gpt-3.5-turbo"],
     }
     ```
 
@@ -256,7 +256,7 @@ def get_config(
 
     example:
     >> model_api_key_map={
-        "gpt-4": "OPENAI_API_KEY",
+        "gpt-3.5-turbo": "OPENAI_API_KEY",
         "gpt-3.5-turbo": {
             "api_key_env_var": "ANOTHER_API_KEY",
             "api_type": "aoai",
@@ -294,7 +294,7 @@ def config_list_from_dotenv(
     - Create a configuration dictionary for each model using the API keys and additional configurations.
     - Filter and return the configurations based on provided filters.
 
-    model_api_key_map will default to `{"gpt-4": "OPENAI_API_KEY", "gpt-3.5-turbo": "OPENAI_API_KEY"}` if none
+    model_api_key_map will default to `{"gpt-3.5-turbo": "OPENAI_API_KEY", "gpt-3.5-turbo": "OPENAI_API_KEY"}` if none
 
     Args:
         dotenv_file_path (str, optional): The path to the .env file. Defaults to None.
@@ -303,7 +303,7 @@ def config_list_from_dotenv(
                                            variable name storing the API key.
                                            If a dict is provided, it should contain at least 'api_key_env_var' key,
                                            and optionally other API configurations like 'api_base', 'api_type', and 'api_version'.
-                                           Defaults to a basic map with 'gpt-4' and 'gpt-3.5-turbo' mapped to 'OPENAI_API_KEY'.
+                                           Defaults to a basic map with 'gpt-3.5-turbo' and 'gpt-3.5-turbo' mapped to 'OPENAI_API_KEY'.
         filter_dict (dict, optional): A dictionary containing the models to be loaded.
                                       Containing a 'model' key mapped to a set of model names to be loaded.
                                       Defaults to None, which loads all found configurations.
@@ -331,7 +331,7 @@ def config_list_from_dotenv(
     model_api_key_map = model_api_key_map or {}
 
     # Ensure default models are always considered
-    default_models = ["gpt-4", "gpt-3.5-turbo"]
+    default_models = ["gpt-3.5-turbo", "gpt-3.5-turbo"]
 
     for model in default_models:
         # Only assign default API key if the model is not present in the map.

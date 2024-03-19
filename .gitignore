@@ -164,6 +164,12 @@ key_openai.txt
 key_aoai.txt
 base_aoai.txt
 wolfram.txt
+test/MY_CONFIG
+coding/.gradle
+project_management
+project_management/
+test/rewritten_assistant_default.md
 
 # DB on disk for TeachableAgent
 tmp/
+pyautogen/bin
