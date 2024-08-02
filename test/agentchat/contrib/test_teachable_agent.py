@@ -30,7 +30,8 @@ except ImportError:
 # filter_dict={"model": ["gpt-4-0613"]}
 # filter_dict={"model": ["gpt-3.5-turbo-1106"]}
 # filter_dict={"model": ["gpt-3.5-turbo-0613"]}
-# filter_dict={"model": ["gpt-4"]}
+# filter_dict={"model": ["gpt-3.5-turbo-0613"]}
+# filter_dict={"model": ["gpt-3.5-turbo"]}
 filter_dict = {"model": ["gpt-35-turbo-16k", "gpt-3.5-turbo-16k"]}
 
 

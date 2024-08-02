@@ -85,7 +85,7 @@ def test_chatcompletion():
     assert "messages" not in params
     params = autogen.Completion._construct_params(
         context=None,
-        config={"model": "gpt-4"},
+        config={"model": "gpt-3.5-turbo"},
         prompt="hi",
     )
     assert "messages" in params

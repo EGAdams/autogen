@@ -343,7 +343,7 @@ def config_list_gpt4_gpt35(
         aoai_api_key_file,
         aoai_api_base_file,
         exclude,
-        model_list=["gpt-4", "gpt-3.5-turbo"],
+        model_list=["gpt-3.5-turbo-0613", "gpt-3.5-turbo-0613"],
     )
 
 
@@ -542,7 +542,7 @@ def config_list_from_dotenv(
     - Create a configuration dictionary for each model using the API keys and additional configurations.
     - Filter and return the configurations based on provided filters.
 
-    model_api_key_map will default to `{"gpt-4": "OPENAI_API_KEY", "gpt-3.5-turbo": "OPENAI_API_KEY"}` if none
+    model_api_key_map will default to `{"gpt-3.5-turbo": "OPENAI_API_KEY", "gpt-3.5-turbo": "OPENAI_API_KEY"}` if none
 
     Args:
         dotenv_file_path (str, optional): The path to the .env file. Defaults to None.
@@ -579,7 +579,7 @@ def config_list_from_dotenv(
     model_api_key_map = model_api_key_map or {}
 
     # Ensure default models are always considered
-    default_models = ["gpt-4", "gpt-3.5-turbo"]
+    default_models = ["gpt-3.5-turbo", "gpt-3.5-turbo"]
 
     for model in default_models:
         # Only assign default API key if the model is not present in the map.

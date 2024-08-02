@@ -34,7 +34,7 @@ def test_math_user_proxy_agent():
         OAI_CONFIG_LIST,
         file_location=KEY_LOC,
         filter_dict={
-            "model": ["gpt-4", "gpt4", "gpt-4-32k", "gpt-4-32k-0314", "gpt-4-32k-v0314"],
+            "model": ["gpt-3.5-turbo", "gpt4", "gpt-3.5-turbo-32k", "gpt-3.5-turbo-32k-0314", "gpt-3.5-turbo-32k-v0314"],
         },
     )
     assistant = AssistantAgent(
@@ -55,8 +55,10 @@ def test_math_user_proxy_agent():
     #     message=mathproxyagent.generate_init_message(math_problem),
     #     sender=mathproxyagent,
     # )
-    mathproxyagent.initiate_chat(assistant, problem=math_problem)
+    res = mathproxyagent.initiate_chat(assistant, problem=math_problem)
     print(conversations)
+    print("Chat summary:", res.summary)
+    print("Chat history:", res.chat_history)
 
 
 def test_add_remove_print():
