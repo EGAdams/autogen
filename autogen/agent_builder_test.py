@@ -1,4 +1,4 @@
-config_file_or_env = '/home/adamsl/agent_99/autogen/autogen/OAI_CONFIG_LIST'  # modify path
+config_file_or_env = '/home/eg1972/autogen/autogen/OAI_CONFIG_LIST'  # modify path
 default_llm_config = {
     'temperature': 0
 }

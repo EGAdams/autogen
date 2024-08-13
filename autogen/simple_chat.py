@@ -6,7 +6,7 @@ def main():
     # See https://microsoft.github.io/autogen/docs/FAQ#set-your-api-endpoints
     # and OAI_CONFIG_LIST_sample.
     # For example, if you have created a OAI_CONFIG_LIST file in the current working directory, that file will be used.
-    config_list = config_list_from_json(env_or_file="/home/adamsl/agent_99/autogen/autogen/OAI_CONFIG_LIST")
+    config_list = config_list_from_json(env_or_file="/home/eg1972/autogen/autogen/OAI_CONFIG_LIST")
 
     # Create the agent that uses the LLM.
     assistant = ConversableAgent("agent", llm_config={"config_list": config_list})
